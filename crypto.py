@@ -18,49 +18,34 @@ from cryptography.fernet import Fernet
 #  3. Byte-code textdecr
 #
 
+
 def encrdecr(keyval, textencr, textdecr):
     # Declare mainList.
-    mainList =[]
-    
-    # value of key is assigned to a variable 
+    mainList = []
+
+    # value of key is assigned to a variable
     f = Fernet(keyval)
-    
+
     # the plaintext is converted to ciphertext and append it in mainList.
 
     cipherText = f.encrypt(textencr)
     mainList.append(cipherText)
-    
+
     # Decrypt the byte-code in 'textdecr' and append it into mainList.
-    
+
     plainText = f.decrypt(textdecr)
     mainList.append(plainText.decode())
 
     return mainList
 
 
-
 if __name__ == '__main__':
 
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
- 
-    file = open('key.key', 'rb')
-    key = file.read()  # The key will be type bytes
-    file.close()
-    
-    keyval = key
+    keyfile = open('file/key.txt', 'rb')
+    keyval = keyfile.read()
+    keyfile.close()
 
-    textencr = str(input()).encode()
-
-    textdecr = str(input()).encode()
-
-
+    textencr = b'Welcome to Cryptography.'
+    textdecr = b'gAAAAABkItff7iJ6QuGYP5MXtNPgyA1W5h2yU2voO0wtq96jR98M6CxrCrvl0XCO1s4HBl2ArZo9mEm_nn2Zsw9OmmIkIUa8sz1FUiwTNsEKgS06gBZPKv8Mcy1OH835428s5BoW3hCca7yMtwvoKgNlll9bnjaYrBrVKSP0BnKGhAaFv8G3HxE='
     result = encrdecr(keyval, textencr, textdecr)
-    bk=[]
-    f = Fernet(key)
-    val = f.decrypt(result[0])
-    bk.append(val.decode())
-    bk.append(result[1])
-
-    fptr.write(str(bk) + '\n')
-
-    fptr.close()
+    print(result)

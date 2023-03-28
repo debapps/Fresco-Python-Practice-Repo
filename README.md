@@ -64,7 +64,7 @@ The string method are implemented as follows:
 
 Import the **'itertools'** module. Define a function called **'performIterator'**, which takes one parameter.
 
-- tuplevalues: It is a tuple. It always contains 4 tuples.
+- `tuplevalues`: It is a tuple. It always contains 4 tuples.
 
 Generate the code based on following conditions:
 
@@ -93,12 +93,86 @@ Generate the code based on following conditions:
 
 ---
 
-### CalenderView.py
+### CalendarView.py
 
-Import the **calender** module. Define a function called **'usingcalender'** which takes following paramerer:
+Import the **calendar** module. Define a function called **'usingcalendar'** which takes following paramerer:
 
 - `datetuple` - a tuple of (year, month, date)
 
 Generate the code based on following conditions:
 
-1. Use the calender module to build the code.
+1. Use the calendar module to build the code.
+2. Check whether the given year from the tuple is a leap year.
+
+   - If it is a leap year, assign the month's value as 2 throughout the whole function.
+
+3. Print the monthly calendar for the specified year and month.
+4. Use _itermonthdates_ module from the calendar to iterate through date of the specified month and year in the calendar.
+
+   - Print the last 7 days that appear on the calendar of that month as a list.
+
+5. Print the day of the week, which appears the most frequent in the specified month and year as a string.
+   - The string can be `Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday`.
+   - If there is more than one frequent day, then consider the one that comes first.
+     - For example, if there are same number of Mondays and Tuesdays, then consider Monday.
+
+**Input Constraints**
+
+All the values must be integer.
+
+---
+
+### Collection.py
+
+Import the **collections** module. Define a function called **collectionfunc** which takes following six parameters:
+
+- `text1`: A string of sentence.
+- `dictionary1`: A dictionary.
+- `key1`: A list of keys.
+- `val1`: A list of values.
+- `deduct`: A distionary.
+- `list1`: A list of keys.
+
+Generate print statements based on following conditions:
+
+1. Create a dictionary with the count of words in **text1**.
+
+   - The words must be the keys and the counts must be the values.
+   - Print the dictionary sorted by key.
+
+2. Create a counter object using **dictionary1**.
+
+   - Subtract the values of the counter object from the respective values specified in the **deduct** dictionary.
+   - Convert the counter object into a dictionary and print it.
+
+3. Create an ordered dictionary with **key1** values as key and **val1** values as value.
+
+   - Delete the key in the ordered dictionary using the second value from **key1**.
+
+4. Reinsert the second values from **key1** as key and **val1** as value into the ordered dictionary.
+
+   - Convert the ordered dictionary into a normal dictionary and print the same.
+
+5. Create a default dictionary that has 'even' and 'odd' keys.
+   - The keys must have in the list as their respective values.
+   - Extract the 'even' and 'odd' numbers from the **list1**.
+   - Print the default dictionary as a normal dictionary.
+
+---
+
+### crypto.py
+
+Import **fernet** from **cryptography** module. Define a function called **encrdecr** which takes 3 parameters as follows:
+
+- `keyval`: key for encoding and decoding data.
+- `textencr`: Text to be encrypted.
+- `textdecr`: The byte-code to be decrypted.
+
+Write code based on the following conditions:
+
+1. Declare an empty main list.
+2. Encrypt the text in **textencr** and append it to the list.
+3. Decrypt the byte-code in **textdecr** and append it to the list.
+4. Return the list.
+
+---
