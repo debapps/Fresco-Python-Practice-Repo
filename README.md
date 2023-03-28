@@ -176,3 +176,47 @@ Write code based on the following conditions:
 4. Return the list.
 
 ---
+
+### DateAndTime.py
+
+Import **datetime** module. Define a function called **dateandtime** which takes 2 parameters:
+
+- `val`: An Integer value ranges from 1 to 5.
+- `tup`: A Tuple, whose values change based on the value of **val**.
+
+**Input Constraints**
+
+- When the value of **val** is 1 or 4, the tuple **tup** will contain three values in the order of (year, month, date) in the form of integers.
+- When the value of **val** is 2, the tuple **tup** will contain one single integer value of timestamp.
+- When the value of **val** is 3, the tuple **tup** will contain three values in the order of (hours, minutes, seconds) in the form of integers.
+- When the value of **val** is 5, the tuple **tup** will contain six values in the order of (year, month, date hours, minutes, seconds) in the form of integers.
+
+Develop the function based on following conditions:
+
+1. Declare an empty list.
+2. When the value of **val** is 1:
+
+   - Convert the tuple **tup** into date and append it into the list.
+   - Format the date in `%d/%m/%Y` format and append it into the list.
+
+3. When the value of **val** is 2:
+
+   - Convert the tuple **tup** into date and append it into the list.
+
+4. When the value of **val** is 3:
+
+   - Convert the tuple **tup** into time and append it into the list.
+   - Extract the hour in 00-12 format and append it into the list.
+
+5. When the value of **val** is 4:
+
+   - Convert the tuple **tup** into date.
+   - From the date, extract the weekday (full version) and append it into the list.
+   - From the date, extract the month (full version) and append it into the list.
+   - From the date, extract the day number of the year (001 - 366) and append it into the list.
+
+6. When the value of **val** is 5:
+
+   - Convert the tuple **tup** into datetime and append it into the list.
+
+7. Return the list.
